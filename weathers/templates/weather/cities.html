@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_title %} Cities {% endblock %}
+{% block content%}
+    {% for city in cities %}
+    <ul>
+        <li>
+            {{city}} - <a href="update/{{city.id}}">edit</a> <a href="delete/{{city.id}}">Delete</a>
+        </li>
+    </ul>
+    {% endfor %}
+{% endblock %}

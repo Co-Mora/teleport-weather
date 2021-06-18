@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+   {% block page_title %} City {% endblock %}
+
+{% block content %}
+{% for city in data %}
+<ul>
+    <li>
+        {{city.coord}}
+    </li>
+    <li>
+        {{city.weather}}
+    </li>
+</ul>
+<a href="{% url "forecast-route" city=city.name %}">Provide Forecast</a>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block page_title %} States {% endblock %}
+{% block content %}
+
+<div class="row justify-content-start">
+    <div class="col-4">
+        {% for state in cities %}
+        <ul>
+            <li><a href="{% url "weather-route" city=state.city %}">{{state.city}}</a></li>
+        </ul>
+        {% endfor %}
+    </div>
+    <div class="col-4">
+        <div class="btn-group">
+            <a href="{% url "cities-route" %}" class="btn btn-primary active" aria-current="page">View Cities from DB</a>
+            <a href="{% url "upload-city" %}" class="btn btn-primary">Create</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
